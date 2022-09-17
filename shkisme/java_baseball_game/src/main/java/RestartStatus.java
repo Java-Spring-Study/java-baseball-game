@@ -1,13 +1,14 @@
 public enum RestartStatus {
-    RESTART(1),
-    END(2);
+  RESTART(1),
+  END(2);
 
-    private int value;
-    RestartStatus(int num){
-        this.value = num;
-    }
+  private int value;
 
-    public int getRestartStatus(){
-        return this.value;
-    }
+  RestartStatus(int num) {
+    this.value = num;
+  }
+
+  public int getRestartStatus() {
+    return this.value;
+  }
 }
