@@ -14,8 +14,7 @@ public class BaseballTool {
   private int strike = 0;
   private int ball = 0;
 
-
-  private void reset() {
+  public void reset() {
     strike = 0;
     ball = 0;
   }
@@ -45,7 +44,6 @@ public class BaseballTool {
       } else {
         throw new IllegalArgumentException();
       }
-
     } else {
       throw new IllegalArgumentException();
     }
@@ -68,12 +66,16 @@ public class BaseballTool {
       if (inputNums.get(i) == solution.get(i)) {
         strike++;
       } else {
-        for (int k : solution) {
-          if (inputNums.get(i) == k) {
-            ball++;
-            break;
-          }
-        }
+        checkBall(i);
+      }
+    }
+  }
+
+  private void checkBall(int index) {
+    for (int k : solution) {
+      if (inputNums.get(index) == k) {
+        ball++;
+        break;
       }
     }
   }
@@ -103,5 +105,4 @@ public class BaseballTool {
       throw new IllegalArgumentException();
     }
   }
-
 }
