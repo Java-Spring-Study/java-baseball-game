@@ -1,28 +1,30 @@
 package baseball.tool;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class BaseballTool {
 
   private Scanner sc = new Scanner(System.in);
-  private int[] solution = new int[3];
-  private int[] inputNums = new int[3];
+  private List<Integer> solution = new ArrayList<Integer>(List.of(0, 0, 0));
+  private List<Integer> inputNums = new ArrayList<Integer>(List.of(0, 0, 0));
   private int strike = 0;
   private int ball = 0;
 
 
   private void reset() {
-    this.strike = 0;
-    this.ball = 0;
+    strike = 0;
+    ball = 0;
   }
 
   public void makeRamdomNumbers() {
     Random random = new Random();
     for (int i = 0; i < 3; i++) {
-      this.solution[i] = random.nextInt(9) + 1;
+      solution.set(i, random.nextInt(9) + 1);
       for (int j = 0; j < i; j++) {
-        if (solution[j] == solution[i]) {
+        if (solution.get(j) == solution.get(i)) {
           i--;
           break;
         }
@@ -51,13 +53,13 @@ public class BaseballTool {
 
   private void setInputNums(int num) {
     for (int i = 2; i >= 0; i--) {
-      this.inputNums[i] = num % 10;
+      inputNums.set(i, num % 10);
       num /= 10;
     }
   }
 
   public boolean checkStrike() {
-    if (this.strike == 3) {
+    if (strike == 3) {
       return true;
     }
     return false;
@@ -65,12 +67,12 @@ public class BaseballTool {
 
   public void calcResult() {
     reset();
-    for (int i = 0; i < this.inputNums.length; i++) {
-      if (inputNums[i] == solution[i]) {
+    for (int i = 0; i < inputNums.size(); i++) {
+      if (inputNums.get(i) == solution.get(i)) {
         strike++;
       } else {
-        for (int j = 0; j < this.solution.length; j++) {
-          if (inputNums[i] == solution[j]) {
+        for (int j = 0; j < solution.size(); j++) {
+          if (inputNums.get(i) == solution.get(j)) {
             ball++;
             break;
           }
