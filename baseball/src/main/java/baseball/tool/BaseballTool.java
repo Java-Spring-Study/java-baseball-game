@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class BaseballTool {
 
-  private Scanner sc = new Scanner(System.in);
+  private final Random random = new Random();
+  private final Scanner sc = new Scanner(System.in);
   private List<Integer> solution = new ArrayList<Integer>(List.of(0, 0, 0));
   private List<Integer> inputNums = new ArrayList<Integer>(List.of(0, 0, 0));
   private int strike = 0;
@@ -20,7 +21,6 @@ public class BaseballTool {
   }
 
   public void makeRamdomNumbers() {
-    Random random = new Random();
     for (int i = 0; i < 3; i++) {
       solution.set(i, random.nextInt(9) + 1);
       for (int j = 0; j < i; j++) {
@@ -59,10 +59,7 @@ public class BaseballTool {
   }
 
   public boolean checkStrike() {
-    if (strike == 3) {
-      return true;
-    }
-    return false;
+    return strike == 3;
   }
 
   public void calcResult() {
