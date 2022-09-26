@@ -68,8 +68,8 @@ public class BaseballTool {
       if (inputNums.get(i) == solution.get(i)) {
         strike++;
       } else {
-        for (int j = 0; j < solution.size(); j++) {
-          if (inputNums.get(i) == solution.get(j)) {
+        for (int k : solution) {
+          if (inputNums.get(i) == k) {
             ball++;
             break;
           }
