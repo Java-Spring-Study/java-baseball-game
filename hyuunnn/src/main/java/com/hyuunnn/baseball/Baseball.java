@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Baseball {
 
-  final int GAME_RESTART = 1;
-  final int GAME_END = 2;
-  final int BALL_LENGTH = 3;
+  final private int GAME_RESTART = 1;
+  final private int GAME_END = 2;
+  final private int BALL_LENGTH = 3;
 
   public String randomize() {
     final Random r = new Random();
