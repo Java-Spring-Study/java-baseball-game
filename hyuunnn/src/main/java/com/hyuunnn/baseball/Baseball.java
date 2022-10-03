@@ -32,15 +32,15 @@ public class Baseball {
   }
 
   public void printBaseballResult(final int strike, final int ball) {
-      if (strike == 0 && ball == 0) {
-          System.out.println("낫싱");
-      } else if (strike == 0 && ball > 0) {
-          System.out.printf("%d볼\n", ball);
-      } else if (strike > 0 && ball == 0) {
-          System.out.printf("%d스트라이크\n", strike);
-      } else {
-          System.out.printf("%d볼 %d스트라이크\n", ball, strike);
-      }
+    if (strike == 0 && ball == 0) {
+      System.out.println("낫싱");
+    } else if (strike == 0 && ball > 0) {
+      System.out.printf("%d볼\n", ball);
+    } else if (strike > 0 && ball == 0) {
+      System.out.printf("%d스트라이크\n", strike);
+    } else {
+      System.out.printf("%d볼 %d스트라이크\n", ball, strike);
+    }
   }
 
   public boolean checkBaseball(final String inputNumber, final String randomNumber) {
@@ -51,11 +51,11 @@ public class Baseball {
       final char randomNumberAt = randomNumber.charAt(i);
       final char inputNumberAt = inputNumber.charAt(i);
 
-        if (checkStrike(randomNumberAt, inputNumberAt)) {
-            strike++;
-        } else if (checkBall(inputNumber, randomNumberAt)) {
-            ball++;
-        }
+      if (checkStrike(randomNumberAt, inputNumberAt)) {
+        strike++;
+      } else if (checkBall(inputNumber, randomNumberAt)) {
+        ball++;
+      }
     }
 
     printBaseballResult(strike, ball);
@@ -68,15 +68,15 @@ public class Baseball {
   }
 
   public void validateLength(final String inputNumber) {
-      if (inputNumber.length() != BALL_LENGTH) {
-          throw new IllegalStateException("입력 값의 길이가 3이 아닙니다.");
-      }
+    if (inputNumber.length() != BALL_LENGTH) {
+      throw new IllegalStateException("입력 값의 길이가 3이 아닙니다.");
+    }
   }
 
   public void validateNumberRange(final String inputNumber) {
-      if (!inputNumber.matches("^[0-9]*$")) {
-          throw new IllegalStateException("입력 값이 숫자가 아닙니다.");
-      }
+    if (!inputNumber.matches("^[0-9]*$")) {
+      throw new IllegalStateException("입력 값이 숫자가 아닙니다.");
+    }
   }
 
   public void validateNumber(final String inputNumber) {
@@ -89,13 +89,13 @@ public class Baseball {
     System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
     final int number = scanner.nextInt();
 
-      if (number == GAME_RESTART) {
-          run();
-      } else if (number == GAME_END) {
-          System.exit(0);
-      } else {
-          throw new IllegalStateException("입력 값이 1 또는 2가 아닙니다.");
-      }
+    if (number == GAME_RESTART) {
+      run();
+    } else if (number == GAME_END) {
+      System.exit(0);
+    } else {
+      throw new IllegalStateException("입력 값이 1 또는 2가 아닙니다.");
+    }
   }
 
   public void startBaseball(final String randomNumber) {
@@ -104,9 +104,9 @@ public class Baseball {
       final String inputNumber = inputString(scanner);
       validateNumber(inputNumber);
 
-        if (checkBaseball(inputNumber, randomNumber)) {
-            break;
-        }
+      if (checkBaseball(inputNumber, randomNumber)) {
+        break;
+      }
     }
     checkRestart(scanner);
     scanner.close();
