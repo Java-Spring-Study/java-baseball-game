@@ -79,7 +79,7 @@ public class Baseball {
     }
   }
 
-  public void validateNumber(final String inputNumber) {
+  public void validateInputNumber(final String inputNumber) {
     validateLength(inputNumber);
     validateNumberRange(inputNumber);
   }
@@ -102,7 +102,7 @@ public class Baseball {
     final Scanner scanner = new Scanner(System.in);
     while (true) {
       final String inputNumber = inputString(scanner);
-      validateNumber(inputNumber);
+      validateInputNumber(inputNumber);
 
       if (checkBaseball(inputNumber, randomNumber)) {
         break;
