@@ -63,7 +63,7 @@ public class Baseball {
   }
 
   public String inputString(final Scanner scanner) {
-    System.out.printf("숫자를 입력해주세요 : ");
+    System.out.print("숫자를 입력해주세요 : ");
     return scanner.nextLine();
   }
 
