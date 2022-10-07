@@ -62,7 +62,7 @@ public class Baseball {
     return checkThreeStrike(strike);
   }
 
-  private String inputString(final Scanner scanner) {
+  private String inputStringNumber(final Scanner scanner) {
     System.out.print("숫자를 입력해주세요 : ");
     return scanner.nextLine();
   }
@@ -98,10 +98,10 @@ public class Baseball {
     }
   }
 
-  private void startBaseball(final String randomNumber) {
+  private void start(final String randomNumber) {
     final Scanner scanner = new Scanner(System.in);
     while (true) {
-      final String inputNumber = inputString(scanner);
+      final String inputNumber = inputStringNumber(scanner);
       validateInputNumber(inputNumber);
 
       if (checkBaseball(inputNumber, randomNumber)) {
@@ -113,6 +113,6 @@ public class Baseball {
   }
 
   public void run() {
-    startBaseball(randomize());
+    start(randomize());
   }
 }
