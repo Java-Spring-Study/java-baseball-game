@@ -37,13 +37,9 @@ public class BaseballTool {
     inputString = sc.next();
 
     int num;
-    if (inputString != null && inputString.matches("[1-9]+")) {
+    if (inputString != null && inputString.matches("[1-9]{3}")) {
       num = Integer.parseInt(inputString);
-      if (num < 1000 && num > 99) {
-        setInputNums(num);  //input된 number를 배열로 저장
-      } else {
-        throw new IllegalArgumentException();
-      }
+      setInputNums(num);  //input된 number를 배열로 저장
     } else {
       throw new IllegalArgumentException();
     }
@@ -56,7 +52,7 @@ public class BaseballTool {
     }
   }
 
-  public boolean checkStrike() {
+  public boolean isStrike() {
     return strike == 3;
   }
 
@@ -94,13 +90,17 @@ public class BaseballTool {
     System.out.println(resultStr);
   }
 
-  public int getSignalCode() throws IllegalArgumentException {
+  public Signal getSignalCode() throws IllegalArgumentException {
     System.out.print("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n" +
         "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
     String signalCode = sc.next();
 
     if (signalCode != null && signalCode.matches("[1-2]")) {
-      return Integer.parseInt(signalCode);
+      if (Integer.parseInt(signalCode) == 1) {
+        return Signal.NEWGAME;
+      } else {
+        return Signal.END;
+      }
     } else {
       throw new IllegalArgumentException();
     }
