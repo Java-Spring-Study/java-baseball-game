@@ -5,7 +5,6 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.Random;
 
-
 public class Baseball {
 
   final private int GAME_RESTART = 1;
