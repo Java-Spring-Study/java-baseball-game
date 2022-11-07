@@ -1,6 +1,11 @@
 public class Main {
   public static void main(String[] args) {
     Baseball baseball = new Baseball();
-    baseball.gameStart();
+    int opinion;
+    do{
+      baseball.gameStart();
+      baseball.gameProcessing();
+      opinion = baseball.getOpinion();
+    }while(opinion == Opinion.RESTART.value());
   }
 }
