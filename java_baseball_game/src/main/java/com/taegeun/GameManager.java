@@ -5,28 +5,30 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GameManager {
-    private List<Integer> playerNum = new ArrayList<>();
-    private List<Integer> comNum = new ArrayList<>();
-    public void generateGame(){
+    private List<Integer> playerNumber = new ArrayList<>();
+    private List<Integer> computerNumber = new ArrayList<>();
+
+    public void generateGame() {
         Computer com = new Computer();
         // 컴퓨터 숫자 생성.
-        comNum = com.randNum();
+        computerNumber = com.randomNumber();
     }
-    public void gameStart(){
-        GameEngine gameEngine = new GameEngine();
-        gameEngine.setComNum(comNum);
 
-        while(true){
+    public void gameStart() {
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.setComNum(computerNumber);
+
+        while (true) {
             //플레이어 숫자 입력
             Player player = new Player();
-            try{
-                playerNum = player.inputNum();
-            }catch (Exception e){
+            try {
+                playerNumber = player.inputNumber();
+            } catch (Exception e) {
                 System.out.println("잘못된 입력입니다.");
                 System.exit(0);
             }
 
-            gameEngine.setPlayerNum(playerNum);
+            gameEngine.setPlayerNum(playerNumber);
             gameEngine.printScore();
             if (!gameEngine.continueGame()) {
                 System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
@@ -34,7 +36,8 @@ public class GameManager {
             }
         }
     }
-    public boolean resumeGame(){
+
+    public boolean isResumeGame() {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
@@ -42,15 +45,16 @@ public class GameManager {
         switch (choice) {
             case 1:
                 return true;
-           default:
+            default:
                 return false;
         }
+    }
 
+    public List<Integer> getPlayerNum() {
+        return playerNumber;
     }
-    public List<Integer> getPlayerNum(){
-        return playerNum;
-    }
-    public List<Integer> getComNum(){
-        return comNum;
+
+    public List<Integer> getComNum() {
+        return computerNumber;
     }
 }

@@ -5,18 +5,18 @@ import java.util.List;
 import java.util.Random;
 
 public class Computer {
-    List<Integer> comNum = new ArrayList<>();
-    public List<Integer> randNum() {
+    List<Integer> computerNumber = new ArrayList<>();
+
+    public List<Integer> randomNumber() {
         int num;
         Random random = new Random();
 
-        while (true) {
-            if (comNum.size() == 3) break;
-            num = random.nextInt(9)+1;
-            if (!comNum.contains(num)){
-                comNum.add(num);
+        while (computerNumber.size() != 3) {
+            num = random.nextInt(9) + 1;
+            if (!computerNumber.contains(num)) {
+                computerNumber.add(num);
             }
         }
-        return comNum;
+        return computerNumber;
     }
 }

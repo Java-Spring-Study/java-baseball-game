@@ -1,25 +1,13 @@
 package com.taegeun;
 
 public class Main {
-    public static void main(String[] args){
-        while (true){
-            GameManager gameManager = new GameManager();
-
+    public static void main(String[] args) {
+        GameManager gameManager = new GameManager();
+        do {
             gameManager.generateGame();
-            System.out.println(gameManager.getComNum());
             gameManager.gameStart();
-
-            if (!gameManager.resumeGame()){
-                break;
-            }
-
-        }
-
-
-
-
-
-
-
+        } while (gameManager.isResumeGame());
     }
 }
+//computer 숫자를 알고 싶을 때...
+//System.out.println(gameManager.getComNum());
