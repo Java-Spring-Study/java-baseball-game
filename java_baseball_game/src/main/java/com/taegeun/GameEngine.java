@@ -7,11 +7,11 @@ public class GameEngine {
     private List<Integer> playerNumber = new ArrayList<>();
     private List<Integer> computerNumber = new ArrayList<>();
 
-    public void setComNum(List<Integer> n) {
+    public void setComputerNumber(List<Integer> n) {
         this.computerNumber = n;
     }
 
-    public void setPlayerNum(List<Integer> n) {
+    public void setPlayerNumber(List<Integer> n) {
         this.playerNumber = n;
     }
 

@@ -8,6 +8,7 @@ public class GameManager {
     private List<Integer> playerNumber = new ArrayList<>();
     private List<Integer> computerNumber = new ArrayList<>();
 
+
     public void generateGame() {
         Computer com = new Computer();
         // 컴퓨터 숫자 생성.
@@ -16,7 +17,7 @@ public class GameManager {
 
     public void gameStart() {
         GameEngine gameEngine = new GameEngine();
-        gameEngine.setComNum(computerNumber);
+        gameEngine.setComputerNumber(computerNumber);
 
         while (true) {
             //플레이어 숫자 입력
@@ -28,7 +29,7 @@ public class GameManager {
                 System.exit(0);
             }
 
-            gameEngine.setPlayerNum(playerNumber);
+            gameEngine.setPlayerNumber(playerNumber);
             gameEngine.printScore();
             if (!gameEngine.continueGame()) {
                 System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
@@ -40,9 +41,8 @@ public class GameManager {
     public boolean isResumeGame() {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-
-        switch (choice) {
+        int signal = sc.nextInt();
+        switch (signal) {
             case 1:
                 return true;
             default:
@@ -50,11 +50,11 @@ public class GameManager {
         }
     }
 
-    public List<Integer> getPlayerNum() {
+    public List<Integer> getPlayerNumber() {
         return playerNumber;
     }
 
-    public List<Integer> getComNum() {
+    public List<Integer> getComputerNumber() {
         return computerNumber;
     }
 }
