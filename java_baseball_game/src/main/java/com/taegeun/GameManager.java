@@ -1,5 +1,6 @@
 package com.taegeun;
 
+import java.lang.Enum;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -42,12 +43,8 @@ public class GameManager {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         Scanner sc = new Scanner(System.in);
         int signal = sc.nextInt();
-        switch (signal) {
-            case 1:
-                return true;
-            default:
-                return false;
-        }
+
+        return signal == GameSignal.RESTART.getSignal();
     }
 
     public List<Integer> getPlayerNumber() {
