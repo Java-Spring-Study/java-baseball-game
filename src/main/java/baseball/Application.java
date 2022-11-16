@@ -6,7 +6,7 @@ public class Application {
     //TODO: 숫자 야구 게임 구현
 
     BaseballGame baseballgame = new BaseballGame();
-    Input_Output input = new Input_Output();
+    InputAndOutput input = new InputAndOutput();
 
     do {
       baseballgame.Game();

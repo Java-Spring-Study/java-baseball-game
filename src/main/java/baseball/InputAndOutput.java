@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 import static baseball.ContinueOrNot.CONTINUE;
 
-public class Input_Output {
+public class InputAndOutput {
 
   Scanner scanner = new Scanner(System.in);
 
-  public int userNum() {
+  public int userNumber() {
     System.out.print("숫자를 입력해주세요: ");
     int user;
     try {

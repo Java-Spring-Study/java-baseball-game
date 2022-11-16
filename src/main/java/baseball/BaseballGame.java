@@ -5,12 +5,12 @@ public class BaseballGame {
   void Game() {
     RandomInt answer = new RandomInt();
     answer.generateRandomInt();
-    Input_Output inout = new Input_Output();
+    InputAndOutput inout = new InputAndOutput();
 
     int user, strike, ball;
 
     do {
-      user = inout.userNum();
+      user = inout.userNumber();
 
       strike = answer.countStrike(user);
       ball = answer.countSameNumber(user) - strike;
