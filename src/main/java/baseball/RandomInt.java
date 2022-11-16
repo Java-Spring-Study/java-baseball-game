@@ -2,11 +2,11 @@ package baseball;
 
 import java.util.Random;
 
-public class randomInt {
+public class RandomInt {
 
   int number;
 
-  randomInt() {
+  RandomInt() {
   }
 
   public void generateRandomInt() {
@@ -38,7 +38,7 @@ public class randomInt {
     return strike;
   }
 
-  public int countSameNum(int user) {
+  public int countSameNumber(int user) {
     int howMany = 0;
     int answer = number;
 

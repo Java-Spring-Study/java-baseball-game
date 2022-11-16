@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static baseball.ContinueOrNot.CONTINUE;
 
-public class InOut {
+public class Input_Output {
 
   Scanner scanner = new Scanner(System.in);
 
@@ -26,8 +26,8 @@ public class InOut {
 
   public boolean isContinue() {
     System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-    int ifContinue = scanner.nextInt();
-    return ifContinue == CONTINUE.getValue();
+    int isContinue = scanner.nextInt();
+    return isContinue == CONTINUE.getValue();
   }
 
   public void printResult(int ball, int strike) {

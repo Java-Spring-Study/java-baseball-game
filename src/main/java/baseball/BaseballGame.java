@@ -3,9 +3,9 @@ package baseball;
 public class BaseballGame {
 
   void Game() {
-    randomInt answer = new randomInt();
+    RandomInt answer = new RandomInt();
     answer.generateRandomInt();
-    InOut inout = new InOut();
+    Input_Output inout = new Input_Output();
 
     int user, strike, ball;
 
@@ -13,7 +13,7 @@ public class BaseballGame {
       user = inout.userNum();
 
       strike = answer.countStrike(user);
-      ball = answer.countSameNum(user) - strike;
+      ball = answer.countSameNumber(user) - strike;
 
       inout.printResult(ball, strike);
     } while (strike != 3);
